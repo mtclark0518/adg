@@ -31,14 +31,14 @@ export class UpdateProfileComponent implements OnInit {
       id: this.identity.getProfile().id,
       firstName: this.firstName,
       lastName: this.lastName,
-      userHandle: this.userHandle,
+      handle: this.userHandle,
       identityId: this.identity.getProfile().nameid
     };
     this.http
-      .put(`${this.domain}/api/doodoo/update/` + profile.identityId, profile, this.identity.basic)
+      .put(`${this.domain}/api/reports/update/` + profile.identityId, profile, this.identity.basic)
         .subscribe(response => {
           if (response) {
-            this.router.navigateByUrl(`/dash/${profile.userHandle}`);
+            this.router.navigateByUrl(`/dash/${profile.handle}`);
           }
       });
   }

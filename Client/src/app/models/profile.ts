@@ -3,5 +3,5 @@ export interface Profile {
   identityId: string;
   firstName: string;
   lastName: string;
-  userHandle: string;
+  handle: string;
 }

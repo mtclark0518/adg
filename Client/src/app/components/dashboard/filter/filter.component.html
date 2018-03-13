@@ -1,3 +1,50 @@
-<p>
-  filter works!
-</p>
+<div class="card text-center dash-component">
+
+
+  <div class="card-header">
+    Map Filter
+    <button class="btn btn-group" (click)="toggleFiltering('color')">colors</button>
+    <button class="btn btn-group" (click)="toggleFiltering('smell')">smells</button>
+    <button class="btn btn-group" (click)="toggleFiltering('texture')">textures</button>
+  </div>
+  <form (ngSubmit)="newFilter()">
+
+      <div class="card-body">
+
+        <div class="card-title">maps</div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radios" [(ngModel)]="radios" id="radio1" value=false>
+            <label class="form-check-label" for="radio1">all reports</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" [(ngModel)]="radios" name="radios" id="radio2" value=true>
+            <label class="form-check-label" for="radio2">my reports</label>
+          </div>
+      </div>
+
+      <div class="card-body">
+        <div *ngIf="filtering === 'color'">
+          <div class="card-title">colors</div>
+          <div class="form-check form-check-inline" *ngFor="let color of colors; let i = index; async">
+            <input class="form-check-input" type="checkbox" name="color-filter" id="cbox{{i}}" (change)="pushColor($event)" value="{{color}}">
+            <label class="form-check-label" for="cbox{{i}}">{{color}}</label>
+          </div>
+        </div>
+        <div *ngIf="filtering === 'smell'">
+          <div class="card-title">smells</div>
+          <div class="form-check form-check-inline" *ngFor="let smell of smells; let i = index; async">
+            <input class="form-check-input" type="checkbox" name="smell-filter" id="sbox{{i}}" (change)="pushSmell($event)" value="{{smell}}">
+            <label class="form-check-label" for="sbox{{i}}">{{smell}}</label>
+          </div>
+        </div>
+        <div *ngIf="filtering === 'texture'">
+          <div class="card-title">textures</div>
+          <div class="form-check form-check-inline" *ngFor="let texture of textures; let i = index; async">
+            <input class="form-check-input" type="checkbox" name="texture-filter" id="tbox{{i}}" (change)="pushTexture($event)" value="{{texture}}">
+            <label class="form-check-label" for="tbox{{i}}">{{texture}}</label>
+          </div>
+        </div>
+      </div>
+          <input type="submit" value="update map" class="btn btn-rounded btn-outline-dark btn-sm" />
+  </form>
+</div>

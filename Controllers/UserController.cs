@@ -19,11 +19,11 @@ using adg.Models;
 using adg.Data;
 
 
-namespace DooDooDiaries.Controllers
+namespace adg.Controllers
 {
 
     [Route("[controller]")]
-    public class IdentityController : Controller
+    public class UserController : Controller
     {
         private readonly IOptions<IdentityOptions> _identityOptions;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -32,12 +32,12 @@ namespace DooDooDiaries.Controllers
         private readonly IConfiguration _configuration;
         private readonly DatabaseContext _dbContext;
 
-        public IdentityController(
+        public UserController(
             IOptions<IdentityOptions> identityOptions,
             SignInManager<ApplicationUser> signInManager,
             UserManager<ApplicationUser> userManager,
             DatabaseContext dbContext,
-            ILogger<IdentityController> logger,
+            ILogger<UserController> logger,
             IConfiguration configuration
             )
         {

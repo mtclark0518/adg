@@ -15,7 +15,7 @@ export class NavigationComponent implements OnInit {
 
   domain = 'http://localhost:5000';
   currentUser;
-  details: Profile;
+  profile: Profile;
 
 
   constructor(
@@ -26,13 +26,15 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     this.currentUser = this.identity.getProfile().nameid;
+    console.log(this.currentUser)
     this.getUserDetails();
   }
 
   getUserDetails() {
     return this.http.get<Profile>(`${this.domain}/api/reports/${this.currentUser}`)
       .subscribe( response => {
-        this.details = {...response};
+        this.profile = {...response};
+        console.log(this.profile)
       });
   }
 

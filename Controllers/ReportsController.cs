@@ -14,16 +14,15 @@ using Microsoft.EntityFrameworkCore;
 using adg.Models;
 using adg.Data;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace adg.Controllers
 {
     [Route("api/[controller]")]
-    public class ReportController : Controller
+    public class ReportsController : Controller
     {
         private readonly DatabaseContext _dbcontext;
 
-        public ReportController(DatabaseContext dbcontext)
+        public ReportsController(DatabaseContext dbcontext)
         {
             _dbcontext = dbcontext;
         }
