@@ -1,1 +1,18 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    font-family: 'Sue Ellen Francisco', cursive;
+    font-size: 1.1rem;
+    letter-spacing: 3px
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-left: 3px solid #42A948 /* green */
+}
+
+.ng-invalid:not(form) {
+    border-left: 3px solid #a94442 /* red */
+}
+
+input.btn, button.btn {
+    border: 1px solid rgba(103, 95, 55, 1.0);
+    background: rgba(225, 221, 181, 1.0)
+}

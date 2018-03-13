@@ -1,0 +1,13 @@
+<div class="card text-center dash-component">
+  <agm-map class="dash-map" [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+    <div *ngFor="let marker of markers; index as i" async>
+      <agm-marker
+        class="map-marker"
+        [latitude]="marker.latitude"
+        [longitude]="marker.longitude"
+        [title]="marker.title"
+        [iconUrl]="'/assets/marker-custom.svg'">
+      </agm-marker>
+    </div>
+  </agm-map>
+</div>

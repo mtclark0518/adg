@@ -24,6 +24,7 @@
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Client\src\app\components\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Data\DbInitializer.cs" />

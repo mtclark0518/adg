@@ -1,0 +1,52 @@
+.dash-container {
+  padding-top: 6vh;
+  background: rgba(246, 245, 246, 1.0);
+  padding-bottom: 6vh;
+  box-shadow: 0 0 3px 0px rgba(123, 87, 45, 1.0)
+}
+
+.dash-component {
+  min-height: 420px;
+}
+
+.dash-item {
+  padding: 4px;
+}
+
+agm-map.dash-map {
+  height: 418px;
+
+}
+agm-map.reporting-map {
+  height: 175px;
+}
+
+.nav {
+  font-size: 1.5em;
+  background: rgba(103, 95, 55, 1.0);
+  box-shadow: 0 0 3px 0px rgba(123, 87, 45, 1.0);
+}
+
+.nav-link, .nav-item{
+color: oldlace;
+}
+
+.card {
+  background: rgba(243, 240, 236, 1.0);
+  box-shadow: 0 0 3px 0px rgba(123, 87, 45, 1.0)
+
+}
+
+.card-header {
+  background: rgba(103, 95, 55, 1.0);
+  color: rgba(225, 221, 181, 1.0);
+}
+
+.card-body, .card-block {
+  background: rgba(243, 240, 236, 1.0);
+
+}
+.card-title, .card-header{
+font-size: 1.2em;
+font-weight: 800;
+}

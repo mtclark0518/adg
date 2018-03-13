@@ -1,0 +1,54 @@
+
+<div class="card text-center dash-component">
+  <div *ngIf="!isReporting">
+      <div class="card-header">
+        Reporting
+      </div>
+      <div class="card-body"></div>
+      <div class="card-body"></div>
+      <button class="btn btn-outline-dark btn-sm" (click)="toggleReporting()">Create Report</button>
+  </div>
+  <div *ngIf="isReporting">
+    <form (ngSubmit)="createReport()">
+      <div class="card">
+        <h5 class="card-header text-center">How was your poop?</h5>
+        <div class="card-body">
+          <select class="custom-select" [(ngModel)]="texture" name="texture">
+            <option selected>Texture</option>
+            <option *ngFor="let texture of textures" [value]="texture"> {{texture}} </option>
+          </select>
+          <select class="custom-select" [(ngModel)]="color" name="color">
+            <option selected>Color</option>
+            <option *ngFor="let color of colors" [value]="color"> {{color}} </option>
+          </select>
+          <select class="custom-select" [(ngModel)]="smell" name="smell">
+            <option selected>Smell</option>
+            <option *ngFor="let smell of smells" [value]="smell"> {{smell}} </option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card">
+        <h5 class="card-header text-center">Where was your poop?</h5>
+        <div class="card-block">
+          <button class="btn btn-sm btn-outline-dark btn-block btn-rounded" type="button" (click)="useMyLocation()">
+              <fa name="location-arrow"></fa>Use my location
+          </button>
+          <div *ngIf="locating">...sniffing you out</div>
+          <agm-map class="reporting-map" [zoom]="zoom" [latitude]="lat" [longitude]="lng">
+              <agm-marker
+              [latitude]="lat"
+              [longitude]="lng"
+              [iconUrl]="'/assets/marker-custom.svg'">
+            </agm-marker>
+          </agm-map>
+        </div>
+        <div class="card-block">
+          <button class="btn btn-outline-dark btn-block btn-rounded text-center" type="submit">
+              <fa name="save"></fa>save
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
