@@ -7,6 +7,8 @@ namespace adg.Models
     {
         public int requester { get; set; }
 
+        public bool nearby { get; set; }
+
         public bool filtered { get; set; }
         public bool byColor { get; set; }
         public bool bySmell { get; set; }

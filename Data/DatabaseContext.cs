@@ -17,6 +17,7 @@ namespace adg.Data
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<UserProfile> UserProfiles { get; set; }
+        public DbSet<Place> Places { get; set; }
         public DbSet<Report> Reports { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {

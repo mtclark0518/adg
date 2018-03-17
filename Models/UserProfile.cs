@@ -1,7 +1,5 @@
 using System;
-using adg.Models;
 using System.Collections.Generic;
-
 namespace adg.Models
 {
     public class UserProfile
@@ -10,6 +8,7 @@ namespace adg.Models
         public string Handle { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public char Gender { get; set; }
 
 
         public string IdentityId { get; set; } // reference to user

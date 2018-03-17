@@ -53,8 +53,8 @@ namespace adg.Controllers
         }
 
 
-        // Receives a new 'report'. 
-        //Creates 'report' and 
+        // Receives a new 'report' 
+        // Creates 'report' 
         // Returns user profile including their reports 
         [HttpPost("{tag}")]
         public async Task<IActionResult> CreateCrapReport([FromBody]Report model, string tag)
