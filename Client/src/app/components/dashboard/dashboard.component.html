@@ -1,13 +1,19 @@
 <app-navigation></app-navigation>
-<div class=" dash-container container-fluid">
-
-  <div class="d-flex row flex-row flex-wrap-reverse xs-flex-wrap no-gutters">
-
-      <app-reporting class="dash-item col-xl-4 col-sm-8"></app-reporting>
-      <app-map class="dash-item col-xl-5 col-sm-8"></app-map>
-      <app-filter class="dash-item col-xl-3 col-sm-4"></app-filter>
-
-
+<div *ngIf="type == 'seeking'">
+  <div class="dash-container text-center">
+    <input class="address-input" placeholder=" ...enter an address" type="text" disabled></div>
+  <app-map></app-map>
+  <div class="dash-container d-flex justify-content-between">
+    <button class="btn btn-sm" (click)="setType('filtering')">filter</button>
+    <button class="btn btn-sm" (click)="setType('reporting')">add</button>
   </div>
-
 </div>
+
+<div *ngIf="type == 'reporting'">
+  <app-reporting class="dash-item col-xl-4 col-sm-8"></app-reporting>
+</div>
+<div *ngIf="type == 'filtering'">
+  <app-filter class="dash-item col-xl-3 col-sm-4"></app-filter>
+</div>
+
+

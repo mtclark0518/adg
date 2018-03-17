@@ -1,8 +1,7 @@
 .dash-container {
-  padding-top: 6vh;
+  padding-top: 1vh;
   background: rgba(246, 245, 246, 1.0);
-  padding-bottom: 6vh;
-  box-shadow: 0 0 3px 0px rgba(123, 87, 45, 1.0)
+  padding-bottom: 1vh;
 }
 
 .dash-component {
@@ -12,7 +11,10 @@
 .dash-item {
   padding: 4px;
 }
-
+.address-input{
+  width: 80%;
+  border-radius: 25px;
+}
 agm-map.dash-map {
   height: 418px;
 
